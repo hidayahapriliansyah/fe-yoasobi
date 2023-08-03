@@ -771,8 +771,9 @@ const dataStatic = [
 const getData = async () => {
   try {
     // const response = await fetch('http://localhost:3000/musics');
-    // const data = await response.json();
-    // return data.data;
+    const response = await fetch('https://be-himatika-yoasobi.vercel.app/musics');
+    const data = await response.json();
+    return data.data;
     return dataStatic;
   } catch (error) {
     alert(error);
