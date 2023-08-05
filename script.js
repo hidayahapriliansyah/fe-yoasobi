@@ -822,6 +822,10 @@ const renderPage = async () => {
 
     try {
       const musics = data.filter((item) => item.title.toLocaleLowerCase().includes(musicTitle.toLocaleLowerCase()));
+      if (musics.length === 0) {
+        contentElement.innerHTML = `<p class="text-center mt-5">Musik dengan judul ${musicTitle} tidak ada</p>`;
+        return;
+      }
       contentElement.innerHTML = musics.map((item) => (`
           <div class="card mb-3" style="max-width: 540px;">
             <div class="card-body">
